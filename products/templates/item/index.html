@@ -15,6 +15,7 @@ Item Management
             <th>name</th>
             <th>Price</th>
             <th>department</th>
+            <th>photo</th>
             <th>Actions</th>
         </tr>
     {% for item in all_items %}
@@ -23,8 +24,13 @@ Item Management
         <td>{{item.name}}</td>
         <td>{{item.price}}</td>
         <td>{{ item.department.title }}</td>
+        {% if item.photo.url %}
+            <td><img src="{{ item.photo.url }}" alt="{{ item.photo}}"></td>
+        {% else %}
+            <td></td>
+        {% endif %}
         <td>
-            <a href="/item/{{ item.id}}">Read</a>
+            <a href="/item/{{ item.id }}">Read</a>
             <a href="{% url 'item_delete'  item.id %}">Delete</a>
         </td>
     </tr>

@@ -23,11 +23,12 @@
 
     <table>
         <tr>
-           <th>ID #</th>
+          <th>ID #</th>
           <th>name</th>
           <th>Price</th>
           <th>department</th>
           <th>description</th>
+          <th>image</th>
         </tr>
       
         <tr>
@@ -36,7 +37,7 @@
           <td>{{item_data.price}}</td>
           <td>{{ item_data.department.title }}</td>
           <td>{{ item_data.description }}</td>
-              
+          <td><img src="{{ item_data.photo.url }}" alt="{{ item_data.photo}}"></td>              
         </tr>
         
       </table>
